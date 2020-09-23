@@ -5,7 +5,7 @@ const server = express();
 const port = 3000;
 
 server.get(
-	'/',
+	'/employee',
 	(request, response) => {
 		console.log('get (console)');
 		response.send('get (response)');
@@ -13,7 +13,7 @@ server.get(
 )
 
 server.post(
-	'/',
+	'/employee',
 	(request, response) => {
 		console.log('post (console)');
 		response.send('post (response)');
@@ -21,7 +21,7 @@ server.post(
 )
 
 server.patch(
-	'/',
+	'/employee',
 	(request, response) => {
 		console.log('patch (console)');
 		response.send('patch (response)');
@@ -29,7 +29,7 @@ server.patch(
 )
 
 server.delete(
-	'/',
+	'/employee',
 	(request, response) => {
 		console.log('delete (console)');
 		response.send('delete (response)');
