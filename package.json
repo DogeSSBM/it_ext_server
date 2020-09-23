@@ -1,0 +1,25 @@
+{
+  "name": "it_ext_server",
+  "version": "1.0.0",
+  "description": "asdf",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DogeSSBM/it_ext_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DogeSSBM/it_ext_server/issues"
+  },
+  "homepage": "https://github.com/DogeSSBM/it_ext_server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
