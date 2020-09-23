@@ -1,3 +1,29 @@
+.DS_Store
+node_modules
+/dist
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+
+# Editor directories and files
+.tags
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Doge nonsense
+up.sh
+down.sh
+
 # Logs
 logs
 *.log
