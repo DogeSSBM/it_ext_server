@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+dbSetup.sql
 
 # local env files
 .env
