@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const db = require('./db');
 
 const server = express();
@@ -24,24 +25,18 @@ async function deleteFromDb(id) {
 }
 
 server.get(
-	'/',
+	'/employees',
+	cors(),
 	(request, response) => {
-		// insertIntoDb({
-		// 	first_name: 'Bob',
-		// 	last_name: 'Smith',
-		// 	ext: 123,
-		// 	department: 'Nerd',
-		// 	email: 'nerd@nerd.com',
-		// }).then(info => {
-		// 	console.log(info);
-		// });
-		// deleteFromDb('a496bf22-8db3-4045-a782-dc263c24935f')
-		// 	.then(info => {
-		// 		console.log(info);
-		// 	});
+		insertIntoDb({
+			first_name: 'John',
+			last_name: 'Ch33ks',
+			ext: 1234,
+			department: 'Nerd2',
+			email: 'ch33ks@nerd.com',
+		});
 		selectFromDb().then(rows => {
-			console.log(rows[0]);
-			response.send(rows[0]);
+			response.send(rows);
 		});
 	},
 );
