@@ -28,13 +28,6 @@ server.get(
 	'/employees',
 	cors(),
 	(request, response) => {
-		insertIntoDb({
-			first_name: 'John',
-			last_name: 'Ch33ks',
-			ext: 1234,
-			department: 'Nerd2',
-			email: 'ch33ks@nerd.com',
-		});
 		selectFromDb().then(rows => {
 			response.send(rows);
 		});

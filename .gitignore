@@ -3,6 +3,8 @@ node_modules
 /dist
 dbSetup.sql
 
+.notes
+
 # local env files
 .env
 .env.local
