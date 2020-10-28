@@ -10,6 +10,10 @@ const port = 3000;
 server.use(bodyParser.json());
 
 const allowedOrigins = [
+	'http://10.10.15.109:8080',
+        'http://10.10.15.109:8080/',
+        'http://10.10.15.109:8080/employees',
+        'http://10.10.15.109:8080/employeesFilter',
 	'http://localhost:3000',
 	'http://localhost:3000/',
 	'http://localhost:3000/employees',
