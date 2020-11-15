@@ -9,8 +9,13 @@ exports.up = async function up(knex) {
 			.notNullable()
 			.primary();
 		table.text('first_name').notNull();
+		table.text('first_lower').notNull();
 		table.text('last_name').notNull();
+		table.text('last_lower').notNull();
+		table.text('alias_name');
+		table.text('alias_lower');
 		table.integer('ext').unsigned();
+		table.text('position');
 		table.text('department');
 		table.text('email');
 	});

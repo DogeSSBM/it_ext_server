@@ -11,9 +11,9 @@ server.use(bodyParser.json());
 
 const allowedOrigins = [
 	'http://10.10.15.109:8080',
-        'http://10.10.15.109:8080/',
-        'http://10.10.15.109:8080/employees',
-        'http://10.10.15.109:8080/employeesFilter',
+	'http://10.10.15.109:8080/',
+	'http://10.10.15.109:8080/employees',
+	'http://10.10.15.109:8080/employeesFilter',
 	'http://localhost:3000',
 	'http://localhost:3000/',
 	'http://localhost:3000/employees',
@@ -23,6 +23,7 @@ const allowedOrigins = [
 	'http://127.0.0.1:8080/employees',
 	'http://127.0.0.1:8080/employeeFilter',
 ];
+
 server.use(cors({
 	origin: (origin, callback) => {
 		// allow requests with no origin
