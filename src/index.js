@@ -65,9 +65,34 @@ server.post(
 	(request, response) => {
 		console.log('Received POST request');
 		const reqJsonFilter = request.body;
-		db('test')
-			.where(reqJsonFilter)
-			.then(rows => response.send(rows));
+		return (
+			db('test')
+			.where((builder) => {
+				if (!!reqJsonFilter.first_lower) {
+					builder = builder.where('first_lower', 'like', `%${reqJsonFilter.first_lower}%`);
+				}
+				if (!!reqJsonFilter.last_lower) {
+					builder = builder.where('last_lower', 'like', `%${reqJsonFilter.last_lower}%`);
+				}
+				if (!!reqJsonFilter.alias_lower) {
+					builder = builder.where('alias_lower', 'like', `%${reqJsonFilter.alias_lower}%`);
+				}
+				if (!!reqJsonFilter.ext) {
+					builder = builder.where('ext', 'like', `%${reqJsonFilter.ext}%`);
+				}
+				if (!!reqJsonFilter.department) {
+					builder = builder.where('department', 'like', `%${reqJsonFilter.department}%`);
+				}
+				if (!!reqJsonFilter.position) {
+					builder = builder.where('position', 'like', `%${reqJsonFilter.position}%`);
+				}
+				if (!!reqJsonFilter.email) {
+					builder = builder.where('email', 'like', `%${reqJsonFilter.email}%`);
+				}
+				return builder;
+			})
+			.then(rows => response.send(rows))
+		);
 	},
 );
 
