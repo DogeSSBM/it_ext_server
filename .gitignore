@@ -4,6 +4,8 @@ node_modules
 dbSetup.sql
 
 .notes
+/Notes
+/Notes/*
 
 # local env files
 .env
