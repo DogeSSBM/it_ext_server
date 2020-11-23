@@ -66,32 +66,32 @@ server.post(
 		console.log('Received POST request');
 		const reqJsonFilter = request.body;
 		return (
-			db('test')
-			.where((builder) => {
-				if (!!reqJsonFilter.first_lower) {
-					builder = builder.where('first_lower', 'like', `%${reqJsonFilter.first_lower}%`);
+			db('test').where(builder => {
+				let query = builder;
+				if (reqJsonFilter.first_lower) {
+					query = query.where('first_lower', 'like', `%${reqJsonFilter.first_lower}%`);
 				}
-				if (!!reqJsonFilter.last_lower) {
-					builder = builder.where('last_lower', 'like', `%${reqJsonFilter.last_lower}%`);
+				if (reqJsonFilter.last_lower) {
+					query = query.where('last_lower', 'like', `%${reqJsonFilter.last_lower}%`);
 				}
-				if (!!reqJsonFilter.alias_lower) {
-					builder = builder.where('alias_lower', 'like', `%${reqJsonFilter.alias_lower}%`);
+				if (reqJsonFilter.alias_lower) {
+					query = query.where('alias_lower', 'like', `%${reqJsonFilter.alias_lower}%`);
 				}
-				if (!!reqJsonFilter.ext) {
-					builder = builder.where('ext', 'like', `%${reqJsonFilter.ext}%`);
+				if (reqJsonFilter.ext) {
+					query = query.where('ext', 'like', `%${reqJsonFilter.ext}%`);
 				}
-				if (!!reqJsonFilter.department) {
-					builder = builder.where('department', 'like', `%${reqJsonFilter.department}%`);
+				if (reqJsonFilter.department) {
+					query = query.where('department', 'like', `%${reqJsonFilter.department}%`);
 				}
-				if (!!reqJsonFilter.position) {
-					builder = builder.where('position', 'like', `%${reqJsonFilter.position}%`);
+				if (reqJsonFilter.position) {
+					query = query.where('position', 'like', `%${reqJsonFilter.position}%`);
 				}
-				if (!!reqJsonFilter.email) {
-					builder = builder.where('email', 'like', `%${reqJsonFilter.email}%`);
+				if (reqJsonFilter.email) {
+					query = query.where('email', 'like', `%${reqJsonFilter.email}%`);
 				}
-				return builder;
+				return query;
 			})
-			.then(rows => response.send(rows))
+				.then(rows => response.send(rows))
 		);
 	},
 );
